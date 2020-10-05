@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Converter</title>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+       <link href='https://fonts.googleapis.com/css?family=Artifika' rel='stylesheet'>
+       <link href='https://fonts.googleapis.com/css?family=Abril Fatface' rel='stylesheet'>
+       <link href='https://fonts.googleapis.com/css?family=Allura' rel='stylesheet'>
+        <style>
+            input[type="text"]{
+                border-radius: 5px;
+            }
+            button{
+                margin-top: 20px;
+                margin-bottom: 10px;
+            }
+            @media only screen and (max-width:400px){
+                .cont{
+                    width:200px;
+                   box-sizing: border-box;
+                }
+             } 
+             @media only screen and (min-width:500px){
+                .cont{
+                    width:400px;
+                   box-sizing: border-box;
+                }
+     
+            }
+            input,select{
+                font-family: 'Artifika';font-size: 17px;
+            }
+            .cont {
+            font-family: 'Abril Fatface';font-size: 20px;
+        }
+        #cond{
+            font-family: 'Allura';font-size: 19px;color: red;font-weight: bold;
+        }
+        </style>
+   </head> 
+   <body>
+    <div class="container-fluid  bg-dark text-white p-3" style="font-size: 30px;text-align:center;font-weight:bold;width:100%">CONVERTER</div>
+    <center><div class="cont" style="margin-top: 5%;box-sizing: border-box;background-color: #ffdab9;padding: 10px;">
+        <form style="text-align:left;">
+            <label for="source">Choose  Number System</label><br>
+            <select id="s" name="source" onchange="demo()">
+             <option value="0" disabled selected>--Select--</option>
+              <option value="1">Binary</option>
+              <option value="2">Octal</option>
+              <option value="3">Decimal</option>
+              <option value="4">Hexadecimal</option>
+            </select>
+            <br>
+            <label for="n1">Enter the Number to be converted</label><br>
+            <input type="text" id="no1" name="n1" placeholder="number"><br>
+            <h6 id="cond">*Please enter the number</h6>
+            <label for="dest">Choose  Number System tobe converted</label><br>
+            <select id="d" name="dest">
+              <option value="0" disabled selected>--Select--</option>
+              <option value="1">Binary</option>
+              <option value="2">Octal</option>
+              <option value="3">Decimal</option>
+              <option value="4">Hexadecimal</option>
+            </select>
+            <br>
+            <button type="button" class="btn btn-outline-success btn-sm" onclick="compute()" >Submit</button><br>
+            <input type="reset" class="btn btn-outline-danger btn-sm" onclick="document.getElementById('cond').innerHTML='*Please Enter Number';" value="Reset"><br>
+            <label for="n2">Output</label><br>
+            <input type="text" id="no2" name="n2" >
+          </form>
+         </div></center>
+    <script src="converter.js"></script>
+   </body>
+</html>
